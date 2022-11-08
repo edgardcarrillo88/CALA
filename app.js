@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 
@@ -7,7 +8,9 @@ app.get('/',(req,res)=>{
     res.send("la re lora")//Con esto estamos mandando texto puro
 })
 
-app.listen(4000,()=>{
-    console.log("La lora con el servidor")
+const PORT = process.env.PORT || 4000//asi se accede a las variables de entorno
+
+app.listen(PORT,()=>{
+    console.log(`Servidor ${PORT}`)
 })
 
