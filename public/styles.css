@@ -4,8 +4,24 @@
     gap: 5px;
     flex-direction: column;
     border-radius: 10px;
+    padding-bottom: 20px;
 }
 
 input{
     margin-bottom: 0.5rem;
+}
+
+
+
+.poke-card{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px gray;
+    font-size: 10px;
 }
