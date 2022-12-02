@@ -1,31 +1,17 @@
-const router = require('express').Router()  //estamos definiendo un router para configurar rutas
-const product = require('../models/product')
+
+const express = require('express')
+const router = express.Router()  //estamos definiendo un router para configurar rutas
+const productcontroller = require('../Controllers/product')
+const upload =  require('../middleware/upload')
+
+
+//router.post('/',productcontroller.createproduct)
+router.post('/',upload.single('image'), productcontroller.createproduct)
+router.get('/',productcontroller.getproducts)
+//para eliminar un producto me pide el "id"
+router.delete('/:id',productcontroller.deleteproducts)
 
 
 
-router.post('/',(req,res,next)=>{
-    console.log("Petición recibida")
-    console.log({body:req.body})
-    
-    const newproduct = new product(req.body)//estoy creando una nueva linea, pero aun no la guardo
-    newproduct.save()
-    .then((reuslt)=>{
-        console.log("Item guardado")
-        res.status(201).json({ok:true})//el estatus 201 es que se esta creando algo
-    })//con esto lo mandamos a guardar a la base de datos
-    
-    .catch((err)=>console.log(err))
-    
-    }
-    )
 
-router.get('/', async (req,res)=>{
-
-    const productos = await product.find()
-    res.status(200).json({ok: true, datos:productos, cantidad: productos.length})
-    
-    }
-    )
-
-
-    module.exports = router
+module.exports = router

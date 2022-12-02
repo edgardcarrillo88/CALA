@@ -25,4 +25,6 @@ console.log("Conexión exitosa a la base de datos")})
 
 }
 
-module.exports = dbconnect//esto es importante ya que lo que va a hacer es exportar 
+
+
+module.exports = dbconnect//esto es importante ya que lo que va a hacer es darle la caracteristica a "dbconnect" para que se pueda exportar 

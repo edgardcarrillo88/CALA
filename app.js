@@ -6,7 +6,6 @@ const cors = require('cors')
 require('dotenv').config()
 
 const dbconnect = require('./db/index')
-const product = require('./models/product')
 const productrouter = require('./routes/product')
 
 const app = express()

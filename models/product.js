@@ -6,8 +6,13 @@ const mongoose = require('mongoose')
 //DEFINIR EL ESQUEMA DE LOS DATOS QUE SE ESTAN ENVIANDO AL SERVIDOR
 const productschema = mongoose.Schema({
     name:{type: String, require:true},
-    price:Number,
-    quantity:Number  
+    price: Number,
+    quantity: Number,
+    image:{
+        data: Buffer,
+        contentType:String},
+    //image:{type: String},
+    deleted: {type: Boolean, default:false}
 },
 {
     timestamps:true//para cuando se crea un registro se crea el campo de created y updated
