@@ -24,18 +24,25 @@ const getproducts =  async (req,res)=>{
 const createproduct = (req,res,next)=>{
     console.log("Petición recibida")
     
+  
+
+
+
+
+    
     
 
     const newproduct = new product({
         name: req.body.name,
         price: req.body.price,
         quantity: req.body.quantity,
-        //image: req.file.path
+        
         image:{
             data: fs.readFileSync('uploads/' + req.file.filename),
             contentType: "image/png",
         }
     })//estoy creando una nueva linea, pero aun no la guardo
+
 
 
 
