@@ -1,8 +1,6 @@
 const mongoose = require('mongoose')
 
 
-
-
 //DEFINIR EL ESQUEMA DE LOS DATOS QUE SE ESTAN ENVIANDO AL SERVIDOR
 const productschema = mongoose.Schema({
     name:{type: String, require:true},
@@ -18,6 +16,7 @@ const productschema = mongoose.Schema({
     timestamps:true//para cuando se crea un registro se crea el campo de created y updated
 }
 )
+
 
 
 

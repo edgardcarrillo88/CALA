@@ -6,9 +6,6 @@ const path = require('path')
 
 
 
-
-
-
 //Aca defino las funciones que se van a ejecutar en las rutas
 const getproducts =  async (req,res)=>{
     const products = await product.find({deleted:false}).sort({_id:'desc'})
@@ -17,20 +14,10 @@ const getproducts =  async (req,res)=>{
 
 
 
-
-
-
-
 const createproduct = (req,res,next)=>{
     console.log("Petición recibida")
     
-  
 
-
-
-
-    
-    
 
     const newproduct = new product({
         name: req.body.name,
